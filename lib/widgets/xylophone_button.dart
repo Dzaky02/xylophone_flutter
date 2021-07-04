@@ -14,17 +14,13 @@ class XylophoneButton extends StatelessWidget {
   // create audio player
   final player = AudioCache();
 
-  void playSound(int number) {
-    player.play('note$number.wav');
-  }
+  void playSound(int number) => player.play('note$number.wav');
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ElevatedButton(
-        onPressed: () {
-          playSound(soundNumber);
-        },
+        onPressed: () => playSound(soundNumber),
         style: ElevatedButton.styleFrom(
           elevation: 0,
           primary: btnColor,
